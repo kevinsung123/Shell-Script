@@ -1,0 +1,26 @@
+﻿#### expr
+- NAME : expr -evaluate expressions
+- DESCRIPTIION : print the value of EXPRESSION to standard output. 
+- EXPRESSION 
+	- ARG1 | ARG2 :  null 또는 0 아니면 ARG1 그 이외에 ARG2
+	- ARG1 | ARG@ : argument가 null 또는 0이 아니면 ARG1 그이외에
+	- ARG1 > ARG2 :  ARG1 is greater than ARG2
+	- STRGIN : REGEXP :  고정 
+- 주의할점
+	- 많은 연산자들이 escaped 또는 quoted가 필요 
+	- ARG 둘다 number이라면 arithmetic(산술연산) 비교 그외에는 lexicographical(사전순)비교이다
+	- pattern 매치는 문자열 매치된것을 리턴하기때문에,  \( and \) or null
+	- 만약 \( and \)가 사용되지 않으면, character의 수 또는 0을 반환함 
+	- Exit Status
+		- 0 : null 또는 0이 아닌 경우
+		- 1 : null 또는 0
+		- 2 : EXPRESSION이 문법적으로 유효하지 않은경우 
+		- 3 : 에러 발생한경우
+#### tee
+-NAME
+	- read from stadard input and write to standart output and files
+- DESCRIPTION
+	- Copy standard input to each FILE, and also to standard output
+	- a : append to given FILEM not overwirte
+	- i : ignore interrupt signals
+	- 
