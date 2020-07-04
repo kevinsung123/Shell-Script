@@ -19,3 +19,6 @@ $ find /home/test -type f | xargs -i cp {} /home/test/backup
 
 - 파일 검색 후 cp
 ```$ ls -alt | grep *.txt | awk '{print $8}' | xargs -n1 cp -t ./tmp```
+	- cp :t 옵션
+		- t :target directory 
+		- 모든 argument를 desc에 복사

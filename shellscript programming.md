@@ -16,4 +16,27 @@ read option2
 grep $option1 $option2 *  
   
 ```
-
+### 제어문
+- **문자열 체크**
+	- [ stringName ] - 문자열이 널(Null) 인지 체크, Null이 아니면 참
+	- [ -n stringName ] - 문자열의 사이즈가 0 이상인지 체크, 0 이상이면 참
+	- [ -z stringName ] - 문자열의 사이즈가 0인지 체크, 0이면 참
+	- [ stringNameA = stringNameB ] - A 문자열과 B 문자열이 같은지 체크, 같으면 참
+	- [ stringNameA != stringNameB ] - A 문자열과 B 문자열이 다른지 체크, 다르면 참
+	
+- **숫재대소크체크**
+	-[ intA -ge 100 ] - 숫자 A가 100보다 크거나 같은지 체크, 100 이상이면 참
+	-[ intA -gt 100 ] - 숫자 A가 100보다 큰지 체크, 100이 넘으면 참
+	-[ intA -le 100 ] - 숫자 A가 100보다 작거나 같은지 체크, 100 이하이면 참
+	-[ intA -lt 100 ] - 숫자 A가 100보다 작은지 체크, 100 미만이면 참
+- **파일체크**
+	- [ -r filename ] - 해당 파일이 읽기 가능한지 체크
+	- [ -w filename ] - 해당 파일이 쓰기 가능한지 체크
+	- [ -x filename ] - 해당 파일이 실행 가능한지 체크
+	- [ -s filename ] - 해당 파일의 사이즈가 제로 이상인지 체크
+	- [ -d filename ] - 해당 파일이 디렉토리 파일인지 체크
+	- [ -f filename ] - 해당 파일이 보통 파일인지 체크
+	- [ -h filename ] - 해당 파일이 링크 파일인지 체크
+- 조건문 결합 
+	- [조건문A -a 조건문B] : -a=and  
+	- [조건문A -o 조건문B] : -o=or

@@ -20,12 +20,26 @@ $ find . -size +300k -ls
 chmod 775 fileA fileB fileC
 => xargs와 유사
  
-$ find . -type f -exec chmod 775 {} \;
+- $ find . -type f -exec chmod 775 {} \;
 chmod 775 fileA
 chmod 775 fileB
 chmod 775 fileC
+`
+-  수정일 
 ```
+$ find ./ -mtime +20 -ls 
+>수정한지 20일이상된 파일과 디렉토리
+
+$ find ./ -mtime +20 -typle f -ls 
+>수정한지 20일이상된 파일
+
+$ find . -mtime +20 -type f -ls -exec rm {} \;
+>수정한지 20일이상된 파일만 삭제
 ```
+- 출력 형식지정
+-  %h=경로  %f=파일명 %k=KB %s=Bytes
+-  형식 : <경로/파일명> <파일크기KB>
+> find ./ -printf "%h/%f\t %kKB \n"
 
 ### df
 - 리눅스 시스템의 마운트 된 디스크 사용량을 확인
@@ -46,3 +60,4 @@ chmod 775 fileC
 - 용량별로 오름차순 : ls -lSr
 - 시간순서대로 표시  : ls -lt
 - 사용시간 순서대로 표시 : ls -lU
+- 파일크기 내림차순 : ls -alSh
