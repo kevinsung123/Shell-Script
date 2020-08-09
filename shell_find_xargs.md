@@ -12,3 +12,7 @@
        backslash  are not special (every character is taken literally).  Disables the end of file string,
        which is treated like any other argument.  Useful when input  items  might  contain  white  space,
        quote marks, or backslashes.  The GNU find -print0 option produces input suitable for this mode.
+---
+### find directory만 찾기고 특정파일 복제
+-  ``` find -maxdepth=1 -type d```
+- ``` find -max-depth=1 -type d -exec cp -r [복제파일]
