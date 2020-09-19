@@ -35,6 +35,11 @@ sort -k 4 -t ":" : 4번째 필드기준으로 정렬하되, 구분자는 : (기�
 
 #### o 저장할 파일명을 명시, 명시하지 않으면 화면에 출력
 
+### human-readble size with awk
+- 문제상황 : B,kiB,MiB,GiB,TiB 정렬
+- 문제해결 : `cat gcs_2020-09-19.txt | awk '{printf "%7s%s    %s\n",$1,substr($2,1,1),$3}' | sort -h`
+
+
   
   
 
